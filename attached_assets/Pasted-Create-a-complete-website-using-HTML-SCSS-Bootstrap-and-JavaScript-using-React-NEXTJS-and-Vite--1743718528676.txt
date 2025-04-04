@@ -1,0 +1,49 @@
+Create a complete website using HTML, SCSS, Bootstrap, and JavaScript using React, NEXTJS, and Vite for a fictitious company called 'Deconotes'. The page should have the following sections, each in its own page or section within the main page (you decide the best structure):
+1 Company History:
+◦ Create a page or section with a narrative about the founding, evolution, and achievements of 'Deconotes'.
+◦ Include relevant images and an attractive design.
+2 Who We Are:
+◦ Create a page or section with subsections for:
+▪ Mission: A clear statement of the company's purpose.
+▪ Vision: A description of the company's desired future.
+▪ Philosophy: The values ​​and principles that guide the company.
+▪ Objectives: Divide the objectives into short-, medium-, and long-term objectives.
+▪ Strategies and Actions: Describe how the objectives will be carried out.
+◦ Use a design that makes the information easy to read and understand.
+3 Catalog:
+◦ Create a page or section with a gallery of Deconotes products or services.
+◦ Include images, descriptions, and prices (if applicable).
+◦ Implement a filter or search system to facilitate navigation.
+4 Organizational Structure:
+◦ Create a page or section with:
+▪ A visual organizational chart of the company.
+▪ Descriptions of functional areas (e.g., marketing, finance, production).
+▪ A list of the company's resources.
+5 Quality:
+◦ Create an interactive section with:
+▪ A survey form to collect customer feedback.
+▪ Dynamic charts (using JavaScript and a library like Chart.js) to display survey results.
+6 Awareness Campaign:
+◦ Create a section dedicated to showcasing the company's actions on social or environmental awareness topics.
+◦ Include videos, images, and relevant text.
+7 Investors:
+◦ Create a section for investors.
+◦ Include relevant financial information, reports, and news.
+8 Marketing Strategies:
+◦ Create a section with the company's sales strategies.
+◦ Describe sales channels, promotions, and advertising.
+9 Contact:
+◦ Include links to the 'Deconotes' Facebook and Instagram pages.
+◦ Implement location maps.
+Additional Requirements:
+• Ensure the page is responsive and displays well on different devices.
+• Use a modern and attractive design.
+• Include a clear and easy-to-use navigation menu.
+• Use colors and fonts that match the company's identity.
+• The website must adhere to SEO best practices.
+Considerations:
+• Use Bootstrap for easy design.
+• You can use JavaScript libraries to create interactivity and dynamic graphics.
+• Dummy images can be used.
+• The page content must be dummy.
+• It will be a static site only, so no configuration or connection to the backend is required.
