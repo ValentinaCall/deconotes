@@ -54,11 +54,4 @@ export default defineConfig({
       plugins: [rollupNodePolyFill({})], // Agregar polyfill para Rollup
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@/styles/variables.scss";`, // Opcional: importa variables globales
-      },
-    },
-  },
 });
