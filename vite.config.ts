@@ -34,6 +34,7 @@ export default defineConfig({
         NodeModulesPolyfillPlugin(),
       ],
     },
+    include: ["crypto-browserify"], 
   },
   resolve: {
     alias: {
