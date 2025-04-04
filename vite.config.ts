@@ -8,6 +8,7 @@ import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfil
 import rollupNodePolyFill from "rollup-plugin-polyfill-node"; // Importar polyfill para Rollup
 
 export default defineConfig({
+  base: './',
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -48,7 +49,7 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "dist/docs"),
     emptyOutDir: true,
     rollupOptions: {
       plugins: [rollupNodePolyFill({})], // Agregar polyfill para Rollup
