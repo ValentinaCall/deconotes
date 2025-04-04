@@ -5,7 +5,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
-import rollupNodePolyFill from "rollup-plugin-node-polyfills"; // Importar polyfill para Rollup
+import rollupNodePolyFill from "rollup-plugin-polyfill-node"; // Importar polyfill para Rollup
 
 export default defineConfig({
   base: "/deconotes/",
@@ -35,7 +35,7 @@ export default defineConfig({
         NodeModulesPolyfillPlugin(),
       ],
     },
-    include: ["crypto-browserify"], 
+    include: ["crypto-browserify", "buffer"], // Incluir buffer
   },
   resolve: {
     alias: {
@@ -44,6 +44,7 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
       crypto: "crypto-browserify",
       stream: "stream-browserify",
+      buffer: "buffer", // Alias para buffer
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
@@ -51,7 +52,7 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     rollupOptions: {
-      plugins: [rollupNodePolyFill()], // Agregar polyfill para Rollup
+      plugins: [rollupNodePolyFill({})], // Agregar polyfill para Rollup
     },
   },
   css: {

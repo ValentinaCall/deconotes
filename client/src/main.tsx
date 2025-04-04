@@ -8,6 +8,11 @@ import process from "process";
 // Register all Chart.js components
 Chart.register(...registerables);
 
+// Asegurarse de que Buffer esté disponible globalmente
+if (typeof globalThis.Buffer === "undefined") {
+  globalThis.Buffer = Buffer;
+}
+
 if (typeof globalThis === "undefined") {
   (window as any).globalThis = window;
 }
