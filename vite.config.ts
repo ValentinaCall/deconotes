@@ -4,6 +4,7 @@ import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
+import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
 
 export default defineConfig({
   base: "/deconotes/",
@@ -30,6 +31,7 @@ export default defineConfig({
           buffer: true,
           process: true,
         }),
+        NodeModulesPolyfillPlugin(),
       ],
     },
   },
@@ -39,6 +41,7 @@ export default defineConfig({
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
       crypto: "crypto-browserify",
+      stream: "stream-browserify",
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
