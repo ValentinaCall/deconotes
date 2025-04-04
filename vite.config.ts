@@ -5,6 +5,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
 import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
+import rollupNodePolyFill from "rollup-plugin-node-polyfills"; // Importar polyfill para Rollup
 
 export default defineConfig({
   base: "/deconotes/",
@@ -49,6 +50,9 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      plugins: [rollupNodePolyFill()], // Agregar polyfill para Rollup
+    },
   },
   css: {
     preprocessorOptions: {
