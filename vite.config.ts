@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import reactSWC from "@vitejs/plugin-react-swc";
 import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
@@ -8,9 +8,14 @@ import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfil
 import rollupNodePolyFill from "rollup-plugin-polyfill-node"; // Importar polyfill para Rollup
 
 export default defineConfig({
-  base: './',
+  base: '/deconotes/',
   plugins: [
-    react(),
+    reactSWC({
+      tsDecorators: true,
+      plugins: [
+        ['@swc/plugin-emotion', {}]
+      ]
+    }),
     runtimeErrorOverlay(),
     themePlugin(),
     ...(process.env.NODE_ENV !== "production" &&
@@ -24,6 +29,9 @@ export default defineConfig({
   ],
   optimizeDeps: {
     esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
       define: {
         global: "globalThis",
       },
@@ -44,15 +52,17 @@ export default defineConfig({
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
       crypto: "crypto-browserify",
       stream: "stream-browserify",
-      buffer: "buffer", // Alias para buffer
+      buffer: "buffer",
+      "./runtimeConfig": "./runtimeConfig.browser",
     },
   },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/docs"),
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
       plugins: [rollupNodePolyFill({})], // Agregar polyfill para Rollup
     },
+    copyPublicDir: true,
   },
 });

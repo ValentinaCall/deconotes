@@ -13,6 +13,7 @@ interface HeaderProps {
 
 const Header = ({ sections, scrollToSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const base = import.meta.env.BASE_URL || '/deconotes/';
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -31,7 +32,7 @@ const Header = ({ sections, scrollToSection }: HeaderProps) => {
               scrollToSection("home");
             }}
           >
-            <img src="/images/deconotes-logo.png" alt="" />
+            <img src={`${base}images/deconotes-logo.png`} alt="Deconotes Logo" />
           </a>
 
           {/* Desktop Navigation */}
