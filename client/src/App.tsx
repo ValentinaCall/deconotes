@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route } from "wouter";
+import { Router, Route, Switch } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,8 +15,10 @@ function App() {
         <meta name="description" content="Deconotes provides innovative solutions for businesses and individuals. Explore our products and services." />
       </Helmet>
       <Router base="/deconotes">
-        <Route path="/" component={Home} />
-        <Route component={NotFound} />
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route component={NotFound} />
+        </Switch>
       </Router>
       <Toaster />
     </QueryClientProvider>
