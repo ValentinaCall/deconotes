@@ -13,7 +13,7 @@ interface HeaderProps {
 
 const Header = ({ sections, scrollToSection }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const base = import.meta.env.BASE_URL || '/deconotes/';
+  const base = import.meta.env.DEV ? '/' : import.meta.env.BASE_URL;
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -21,7 +21,7 @@ const Header = ({ sections, scrollToSection }: HeaderProps) => {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50 rounded-navbar">
-      <div className="container mx-auto px-8">
+      <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between py-2">
           {/* Logo */}
           <a
@@ -36,7 +36,7 @@ const Header = ({ sections, scrollToSection }: HeaderProps) => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-1">
+          <div className="hidden lg:flex space-x-1">
             {sections
               .filter((s) => s.id !== "home" && s.id !== "history")
               .map((section) => (
@@ -56,7 +56,7 @@ const Header = ({ sections, scrollToSection }: HeaderProps) => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-gray-500 focus:outline-none"
+            className="lg:hidden text-gray-500 focus:outline-none"
             onClick={toggleMobileMenu}
           >
             <i className="fas fa-bars text-2xl"></i>
@@ -65,7 +65,7 @@ const Header = ({ sections, scrollToSection }: HeaderProps) => {
 
         {/* Mobile Navigation */}
         <div
-          className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"} pb-4`}
+          className={`lg:hidden ${mobileMenuOpen ? "block" : "hidden"} pb-4`}
         >
           <div className="flex flex-col space-y-3">
             {sections

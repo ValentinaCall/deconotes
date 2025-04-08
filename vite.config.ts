@@ -8,7 +8,7 @@ import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfil
 import rollupNodePolyFill from "rollup-plugin-polyfill-node"; // Importar polyfill para Rollup
 
 export default defineConfig({
-  base: '/deconotes/',
+  base: process.env.NODE_ENV === 'production' ? '/deconotes/' : '/',
   plugins: [
     reactSWC({
       tsDecorators: true,

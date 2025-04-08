@@ -8,13 +8,15 @@ import Home from "@/pages/Home";
 import { Helmet } from "react-helmet";
 
 function App() {
+  const base = import.meta.env.DEV ? '/' : '/deconotes';
+
   return (
     <QueryClientProvider client={queryClient}>
       <Helmet>
         <title>Deconotes - Innovative Solutions</title>
         <meta name="description" content="Deconotes provides innovative solutions for businesses and individuals. Explore our products and services." />
       </Helmet>
-      <Router base="/deconotes">
+      <Router base={base}>
         <Switch>
           <Route path="/" component={Home} />
           <Route component={NotFound} />

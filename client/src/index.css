@@ -14,20 +14,32 @@
 
 .rounded-navbar {
   background-color: rgba(203, 241, 154, 0.7);
-  margin-block-start: 1rem;
-  margin-inline: auto;
-  border-radius: 3rem;
+  margin-block-start: 0;
+  margin-inline: 0;
+  border-radius: 0;
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
 
-  @media (min-width: 992px) {
-    width: 100%;
-    max-width: 1200px;
+  @media (min-width: 1024px) {
+    margin-block-start: 1rem;
+    padding-inline: 1rem;
+    border-radius: 3rem;
+  }
+
+  @media (min-width: 1240px) {
+    padding-inline: 0;
+    width: 1200px;
+    margin-inline: auto;
   }
 }
 
 .rounded-navbar.sticky {
-  top: 1rem;
+  top: 0;
+
+  @media (min-width: 1024px) {
+    top: 1rem;
+  }
 }
 
 .navbar-logo {
@@ -62,7 +74,7 @@ a.nav-item:hover {
   margin-block-start: 1rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .nav-item:not(:last-child) {
     margin-right: 0.2rem;
   }
