@@ -74,6 +74,44 @@ a.nav-item:hover {
   margin-block-start: 1rem;
 }
 
+.photos-container {
+  position: relative;
+  min-height: 50vh;
+}
+
+.photos-container .photo {
+  width: 100%;
+  border-radius: 1rem;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #e0e0e0;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}
+
+.photos-container .photo-1 {
+  width: 40vw;
+}
+
+.photos-container .photo-2 {
+  width: 50vw;
+}
+
+.photos-container .photo-3 {
+  width: 60vw;
+}
+
 @media (min-width: 1024px) {
   .nav-item:not(:last-child) {
     margin-right: 0.2rem;
