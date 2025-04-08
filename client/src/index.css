@@ -80,6 +80,7 @@ a.nav-item:hover {
 }
 
 .photos-container .photo {
+  position: absolute;
   width: 100%;
   border-radius: 1rem;
   aspect-ratio: 16 / 9;
@@ -101,15 +102,21 @@ a.nav-item:hover {
 }
 
 .photos-container .photo-1 {
+  top: 0;
+  right: 0;
   width: 40vw;
 }
 
 .photos-container .photo-2 {
-  width: 50vw;
+  top: 14vh;
+  left: calc(50% - 40vw);
+  width: 62vw;
 }
 
 .photos-container .photo-3 {
-  width: 60vw;
+  top: 35vh;
+  left: calc(50% - 20vw);
+  width: 56vw;
 }
 
 @media (min-width: 1024px) {
