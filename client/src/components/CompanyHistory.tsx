@@ -4,9 +4,13 @@ const CompanyHistory = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Nuestra Historia</h2>
-          <p className="text-gray-600 max-w-3xl mx-auto">Descubre cómo Deconotes evolucionó de una pequeña startup a un líder de la industria a través de la innovación y la dedicación.</p>
+          <p>En Deconotes creemos que cada página escrita puede contar más que palabras: puede contar historias de cambio. Nacimos con una idea sencilla pero poderosa —crear una libreta que inspire creatividad sin dejar huella negativa en el mundo.</p>
+          <br />
+          <p>Utilizando materiales reciclados y procesos responsables, diseñamos un producto que no solo acompaña tus ideas, sino que también respeta el entorno del que formamos parte.</p>
+          <br />
+          <p>Nuestra historia es la de muchas personas que creen que lo ecológico no está peleado con lo práctico ni con el diseño. Escribimos cada paso con propósito, y queremos que tú también seas parte de esta nueva forma de pensar, crear y cuidar.</p>
         </div>
 
         {/* Timeline Component */}
@@ -24,7 +28,6 @@ const CompanyHistory = () => {
                 <div className={`w-full mt-12 md:mt-0 md:w-5/12 ${index % 2 === 0 ? 'md:order-1 md:text-right' : 'md:order-3 md:text-left'}`}>
                   {/* Mobile styling wrapper */}
                   <div className="bg-white p-4 rounded shadow-md mx-4 md:bg-transparent md:p-0 md:shadow-none md:mx-0">
-                    <h3 className="text-xl font-bold mb-2">{item.year}: {item.title}</h3>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
                 </div>

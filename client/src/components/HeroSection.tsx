@@ -10,7 +10,13 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
         <h1>Plasma tus ideas naturalmente</h1>
         <div className="photos-container">
           <div className="photo photo-1"></div>
-          <div className="photo photo-2"></div>
+          <div className="photo photo-2">
+            <img
+              src="/images/photo-hero-1.png"
+              alt="Hero Image 1"
+              className="w-full h-full object-cover rounded-lg"
+            />
+          </div>
           <div className="photo photo-3"></div>
         </div>
       </div>

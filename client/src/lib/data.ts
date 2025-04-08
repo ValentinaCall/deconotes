@@ -74,33 +74,25 @@ export const timelineItems: TimelineItem[] = [
     id: 1,
     year: "2010",
     title: "Fundación",
-    description: "Deconotes fue fundada por Jane Smith con la visión de revolucionar la industria de la toma de notas.",
+    description: "Todo comenzó con una simple idea: hacer algo útil para el planeta. Decidimos crear libretas ecológicas  usando materiales reciclados, como papel donado, y asegurándonos de que todo el proceso fuera responsable con el medio ambiente.",
     icon: "fa-star",
-    image: "https://images.unsplash.com/photo-1582481725274-d63bdf929a90?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+    image: "images/history-img-1.jpg"
   },
   {
     id: 2,
     year: "2013",
     title: "Lanzamiento del Primer Producto",
-    description: "Lanzamos nuestro producto insignia, DecoNote Pro, que rápidamente ganó popularidad entre los profesionales.",
+    description: "Cada libreta que vendemos tiene un propósito más grande que solo ser un producto; es una forma de contribuir a un consumo más consciente. Desde nuestros inicios, hemos creído que, con pequeñas acciones, podemos generar un gran cambio.",
     icon: "fa-rocket",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+    image: "images/history-img-2.jpeg"
   },
   {
     id: 3,
     year: "2017",
     title: "Expansión Internacional",
-    description: "Abrimos oficinas en Europa y Asia, ampliando nuestro alcance global y base de clientes.",
+    description: "Hoy, gracias a tu apoyo, seguimos creando productos que no solo son prácticos y creativos, sino también amigables con la Tierra.",
     icon: "fa-globe",
-    image: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: 4,
-    year: "2022",
-    title: "Premio a la Innovación",
-    description: "Recibimos el prestigioso Premio Global a la Innovación por nuestro sistema de organización de notas impulsado por IA.",
-    icon: "fa-trophy",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80"
+    image: "images/history-img-3.jpg"
   }
 ];
 
