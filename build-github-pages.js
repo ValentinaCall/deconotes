@@ -1,26 +1,31 @@
 // Script to handle copying build files to the docs folder for GitHub Pages
-const fs = require('fs');
-const path = require('path');
+import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Get __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Paths
-const buildDir = path.join(__dirname, 'dist', 'public');
+const buildDir = path.join(__dirname, 'dist');
 const docsDir = path.join(__dirname, 'docs');
 
 // Create docs directory if it doesn't exist
-if (!fs.existsSync(docsDir)) {
-  fs.mkdirSync(docsDir, { recursive: true });
+if (!await fs.access(docsDir).catch(() => false)) {
+  await fs.mkdir(docsDir, { recursive: true });
   console.log('Created docs directory');
 }
 
 // Function to copy files recursively
-function copyDirectory(source, destination) {
+async function copyDirectory(source, destination) {
   // Create destination folder if it doesn't exist
-  if (!fs.existsSync(destination)) {
-    fs.mkdirSync(destination, { recursive: true });
+  if (!await fs.access(destination).catch(() => false)) {
+    await fs.mkdir(destination, { recursive: true });
   }
   
   // Get all files and folders in the source directory
-  const entries = fs.readdirSync(source, { withFileTypes: true });
+  const entries = await fs.readdir(source, { withFileTypes: true });
   
   for (const entry of entries) {
     const sourcePath = path.join(source, entry.name);
@@ -28,43 +33,53 @@ function copyDirectory(source, destination) {
     
     if (entry.isDirectory()) {
       // Recursive copy for directories
-      copyDirectory(sourcePath, destPath);
+      await copyDirectory(sourcePath, destPath);
     } else {
       // Copy files
-      fs.copyFileSync(sourcePath, destPath);
+      await fs.copyFile(sourcePath, destPath);
       console.log(`Copied: ${entry.name}`);
     }
   }
 }
 
-// Clean up docs directory
-if (fs.existsSync(docsDir)) {
-  fs.rmSync(docsDir, { recursive: true, force: true });
-  fs.mkdirSync(docsDir, { recursive: true });
-  console.log('Cleaned docs directory');
-}
-
-// Copy build files to docs directory
-try {
-  copyDirectory(buildDir, docsDir);
-  console.log('Successfully copied build files to docs directory');
-  
-  // Create a simple .nojekyll file to prevent GitHub Pages from ignoring files starting with underscore
-  fs.writeFileSync(path.join(docsDir, '.nojekyll'), '');
-  console.log('Created .nojekyll file');
-  
-  // Create a GitHub Pages-specific index.html in case of 404s
-  // This copies the main index.html to 404.html to handle client-side routing
-  const indexFile = path.join(docsDir, 'index.html');
-  const notFoundFile = path.join(docsDir, '404.html');
-  if (fs.existsSync(indexFile)) {
-    fs.copyFileSync(indexFile, notFoundFile);
-    console.log('Created 404.html file for client-side routing');
+// Main function to handle the build process
+async function main() {
+  // Clean up docs directory
+  if (await fs.access(docsDir).catch(() => false)) {
+    await fs.rm(docsDir, { recursive: true, force: true });
+    await fs.mkdir(docsDir, { recursive: true });
+    console.log('Cleaned docs directory');
   }
-  
-} catch (error) {
-  console.error('Error copying files:', error);
-  process.exit(1);
+
+  // Copy build files to docs directory
+  try {
+    await copyDirectory(buildDir, docsDir);
+    console.log('Successfully copied build files to docs directory');
+    
+    // Create a simple .nojekyll file to prevent GitHub Pages from ignoring files starting with underscore
+    await fs.writeFile(path.join(docsDir, '.nojekyll'), '');
+    console.log('Created .nojekyll file');
+    
+    // Create a GitHub Pages-specific index.html in case of 404s
+    // This copies the main index.html to 404.html to handle client-side routing
+    const indexFile = path.join(docsDir, 'index.html');
+    const notFoundFile = path.join(docsDir, '404.html');
+    
+    if (await fs.access(indexFile).catch(() => false)) {
+      await fs.copyFile(indexFile, notFoundFile);
+      console.log('Created 404.html file for client-side routing');
+    }
+    
+  } catch (error) {
+    console.error('Error copying files:', error);
+    process.exit(1);
+  }
+
+  console.log('GitHub Pages deployment files prepared in /docs folder');
 }
 
-console.log('GitHub Pages deployment files prepared in /docs folder');
+// Run the main function
+main().catch(error => {
+  console.error('Error:', error);
+  process.exit(1);
+});
