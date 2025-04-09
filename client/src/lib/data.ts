@@ -75,7 +75,7 @@ export const timelineItems: TimelineItem[] = [
     year: "2010",
     title: "Fundación",
     description: "Todo comenzó con una simple idea: hacer algo útil para el planeta. Decidimos crear libretas ecológicas  usando materiales reciclados, como papel donado, y asegurándonos de que todo el proceso fuera responsable con el medio ambiente.",
-    icon: "fa-star",
+    icon: "fa-seedling",
     image: "images/history-img-1.jpg"
   },
   {

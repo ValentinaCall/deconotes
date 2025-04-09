@@ -71,52 +71,15 @@ a.nav-item:hover {
 }
 
 #home {
-  margin-block-start: 1rem;
+  margin-block-start: -5rem;
 }
 
-.photos-container {
-  position: relative;
-  min-height: 50vh;
-}
+.hero-container {
+  height: 100lvh;
 
-.photos-container .photo {
-  position: absolute;
-  width: 100%;
-  border-radius: 1rem;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  background-color: #e0e0e0;
-  animation: skeleton-loading 1.5s infinite ease-in-out;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: #e0e0e0;
+  @media (min-width: 1024px) {
+    height: 80vh;
   }
-  50% {
-    background-color: #f0f0f0;
-  }
-  100% {
-    background-color: #e0e0e0;
-  }
-}
-
-.photos-container .photo-1 {
-  top: 0;
-  right: 0;
-  width: 40vw;
-}
-
-.photos-container .photo-2 {
-  top: 14vh;
-  left: calc(50% - 40vw);
-  width: 62vw;
-}
-
-.photos-container .photo-3 {
-  top: 35vh;
-  left: calc(50% - 20vw);
-  width: 56vw;
 }
 
 @media (min-width: 1024px) {

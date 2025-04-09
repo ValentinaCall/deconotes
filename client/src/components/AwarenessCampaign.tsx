@@ -22,7 +22,7 @@ const AwarenessCampaign = () => {
             <div className="p-8">
               <span className="bg-[#2ecc71] text-white text-sm py-1 px-3 rounded-full mb-4 inline-block">Iniciativa actual</span>
               <h3 className="text-2xl font-bold mb-4">Cada hoja cuenta.</h3>
-              <p className="text-gray-600 mb-6">Con nuestra campaña #SaveTheWorld, te invitamos a ser parte del cambio: dona las hojas usadas de tus antiguas libretas y ayúdanos a darles una segunda vida. En Deconotes, recolectamos papel reciclado para transformarlo en nuevas libretas ecológicas, reduciendo el desperdicio y fomentando una cultura de reutilización y conciencia ambiental.
+              <p className="text-gray-600 mb-6">Con nuestra campaña <strong>#SaveTheWorld</strong>, te invitamos a ser parte del cambio: dona las hojas usadas de tus antiguas libretas y ayúdanos a darles una segunda vida. En Deconotes, recolectamos papel reciclado para transformarlo en nuevas libretas ecológicas, reduciendo el desperdicio y fomentando una cultura de reutilización y conciencia ambiental.
               Juntos, podemos escribir un futuro más verde, una página a la vez.</p>
             </div>
           </div>
