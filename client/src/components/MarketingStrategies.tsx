@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { assetPath } from '../utils/assetPath';
 
 const MarketingStrategies = () => {
   type ModalType = 'video' | 'image1' | 'image2' | 'image3';
@@ -6,26 +7,26 @@ const MarketingStrategies = () => {
   const mediaConfig = {
     video: {
       type: 'video',
-      poster: '/images/video-poster.jpg',
-      src: '/videos/promotional-video.mp4',
+      poster: assetPath('/images/video-poster.jpg'),
+      src: assetPath('/videos/promotional-video.mp4'),
       title: 'Video Promocional'
     },
     image1: {
       type: 'image',
-      thumbnail: '/images/magazine.jpeg',
-      src: '/images/magazine.jpeg',
+      thumbnail: assetPath('/images/magazine.jpeg'),
+      src: assetPath('/images/magazine.jpeg'),
       title: 'Revista'
     },
     image2: {
       type: 'image',
-      thumbnail: '/images/board.jpeg',
-      src: '/images/board.jpeg',
+      thumbnail: assetPath('/images/board.jpeg'),
+      src: assetPath('/images/board.jpeg'),
       title: 'Anuncio'
     },
     image3: {
       type: 'image',
-      thumbnail: '/images/flyer.jpeg',
-      src: '/images/flyer.jpeg',
+      thumbnail: assetPath('/images/flyer.jpeg'),
+      src: assetPath('/images/flyer.jpeg'),
       title: 'Flyer Promocional'
     },
   };

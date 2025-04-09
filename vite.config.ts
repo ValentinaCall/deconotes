@@ -64,5 +64,7 @@ export default defineConfig({
       plugins: [rollupNodePolyFill({})], // Agregar polyfill para Rollup
     },
     copyPublicDir: true,
+    assetsDir: 'assets'
   },
+  publicDir: path.resolve(import.meta.dirname, "client/public")
 });

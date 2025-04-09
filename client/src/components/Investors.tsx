@@ -2,6 +2,7 @@ import { financialReports, companyNews } from '@/lib/data';
 import RevenueChart from './charts/RevenueChart';
 import MarketShareChart from './charts/MarketShareChart';
 import InvestmentChart from './charts/InvestmentChart';
+import { assetPath } from '../utils/assetPath';
 
 const Investors = () => {
   return (
@@ -58,7 +59,10 @@ const Investors = () => {
                 </div>
               </div>
               
-              <div className="h-full min-h-[400px] bg-cover bg-center" style={{ backgroundImage: "url('/images/investors.jpeg')" }}></div>
+              <div 
+                className="h-full min-h-[400px] bg-cover bg-center" 
+                style={{ backgroundImage: `url('${assetPath('/images/investors.jpeg')}')`}}
+              ></div>
             </div>
           </div>
       </div>
