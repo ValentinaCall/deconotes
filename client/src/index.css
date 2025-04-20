@@ -82,6 +82,132 @@ a.nav-item:hover {
   }
 }
 
+.deconote-counter-shop {
+  min-height: 50vh;
+  overflow-x: hidden;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item-container .item {
+  width: 100%;
+  max-width: 500px;
+}
+
+.item-image{
+  height: 50vh;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.price-container {
+  position: absolute;
+  z-index: 12;
+  top: 30px;
+  right: 4vw;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #237043;
+  transform: rotate(-15deg) scale(1);
+  transition: all 300ms ease;
+}
+
+.price-symbol {
+  color: white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.price-number {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: -0.2rem;
+}
+
+.notebook-image {
+  width: 100%;
+  height: auto;
+  max-width: 260px;
+  position: relative;
+  z-index: 11;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.item-image:hover .notebook-image {
+  animation-play-state: paused;
+}
+
+.item-image:hover .price-container {
+  animation: scale 1s ease-in-out forwards;
+}
+
+.item-image .price-container {
+  animation: scale-back 1s ease-in-out forwards;
+}
+
+@keyframes scale-back {
+  0% {
+    transform: scale(1.5) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1) rotate(-15deg);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1) rotate(-15deg);
+  }
+  100% {
+    transform: scale(1.5) rotate(-15deg);
+  }
+}
+
+.hand-image {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: 1024px) {
+    margin-inline-start: 90px;
+  }
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(55px); }
+  100% { transform: translateY(0px); }
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item-description {
+  font-size: 1rem;
+  text-align: center;
+}
+
 @media (min-width: 1024px) {
   .nav-item:not(:last-child) {
     margin-right: 0.2rem;

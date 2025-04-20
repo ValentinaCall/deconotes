@@ -1,115 +1,90 @@
 import { useState } from 'react';
-import { products, Product } from '@/lib/data';
 
 const Catalog = () => {
-  const [filter, setFilter] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}images/gallery/gallery-item-1.jpeg`,
+    `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}images/gallery/gallery-item-2.jpeg`,
+    `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}images/gallery/gallery-item-3.jpeg`,
+    `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}images/gallery/gallery-item-4.jpeg`,
+    `${import.meta.env.DEV ? '/' : import.meta.env.BASE_URL}images/gallery/gallery-item-5.jpeg`,
+  ];
+  const base = import.meta.env.DEV ? '/' : import.meta.env.BASE_URL;
 
-  const filterProducts = (category: string) => {
-    setFilter(category);
+  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLDivElement).classList.contains('modal-overlay')) {
+      setIsGalleryOpen(false);
+    }
   };
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const filteredProducts = products.filter(product => {
-    const matchesFilter = filter === 'all' || product.category === filter;
-    const matchesSearch = searchQuery === '' || 
-                          product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          product.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesFilter && matchesSearch;
-  });
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Nuestro Catálogo de Productos</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Nuestro Catálogo</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">Descubre nuestras soluciones innovadoras diseñadas para mejorar la productividad y la organización.</p>
         </div>
 
-        {/* Filter Controls */}
-        <div className="mb-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            <button 
-              onClick={() => filterProducts('all')}
-              className={`px-6 py-2 rounded-full transition duration-300 ${
-                filter === 'all' 
-                  ? 'bg-[#3498db] text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Todos los Productos
-            </button>
-            <button 
-              onClick={() => filterProducts('software')}
-              className={`px-6 py-2 rounded-full transition duration-300 ${
-                filter === 'software' 
-                  ? 'bg-[#3498db] text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Software
-            </button>
-            <button 
-              onClick={() => filterProducts('hardware')}
-              className={`px-6 py-2 rounded-full transition duration-300 ${
-                filter === 'hardware' 
-                  ? 'bg-[#3498db] text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Hardware
-            </button>
-            <button 
-              onClick={() => filterProducts('service')}
-              className={`px-6 py-2 rounded-full transition duration-300 ${
-                filter === 'service' 
-                  ? 'bg-[#3498db] text-white' 
-                  : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-              }`}
-            >
-              Servicios
-            </button>
-          </div>
-        </div>
-
-        {/* Search Box */}
-        <div className="mb-10 max-w-md mx-auto">
-          <div className="relative flex items-center">
-            <input 
-              type="text" 
-              placeholder="Buscar productos..." 
-              className="w-full py-3 pl-12 pr-4 text-gray-700 bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3498db] focus:bg-white"
-              value={searchQuery}
-              onChange={handleSearch}
-            />
-            <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-              <i className="fas fa-search text-gray-400"></i>
-            </div>
-          </div>
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-              <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-bold">{product.name}</h3>
-                  <span className="bg-[#3498db] text-white text-sm py-1 px-3 rounded-full">{product.price}</span>
+        <div className='deconote-counter-shop'>
+          <div className="item-container">
+            <div className="item">
+              <div className="item-image">
+                <div className="price-container">
+                  <span className="price-symbol">$</span>
+                  <span className="price-number">69</span>
                 </div>
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">{product.category.charAt(0).toUpperCase() + product.category.slice(1)}</span>
-                  <button className="bg-[#f39c12] hover:bg-yellow-500 text-white py-2 px-4 rounded transition duration-300">Ver Detalles</button>
-                </div>
+                <img className='notebook-image' src={`${base}images/deconotes_icon.png`} alt="Libreta Deconotes" />
+                <img className='hand-image' src={`${base}images/hand.png`} alt="Una mano sosteniendo algo" />
+              </div>
+              <div className="item-details">
+                <h3 className="item-name">Deconotes</h3>
+                <p className="item-description">La solución perfecta para organizar tus ideas y tareas.</p>
+                <button 
+                  className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors mt-4 mx-auto block"
+                  onClick={() => setIsGalleryOpen(true)}
+                >
+                  Ver galería
+                </button>
               </div>
             </div>
-          ))}
+          </div>
         </div>
+
+        {isGalleryOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center modal-overlay"
+            onClick={(e) => handleOutsideClick(e)}
+          >
+            <div className="bg-transparent rounded-lg w-full max-w-4xl p-4 relative">
+              <button 
+                onClick={() => setIsGalleryOpen(false)}
+                className="absolute top-2 right-2 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors"
+              >
+                <i className="fas fa-times"></i>
+              </button>
+              <div className="slider-container relative max-h-[90vh] overflow-hidden">
+                <button 
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2 text-gray-600 hover:text-gray-800 transition-colors"
+                  onClick={() => setCurrentImage((currentImage - 1 + images.length) % images.length)}
+                >
+                  <i className="fas fa-chevron-left"></i>
+                </button>
+                <img 
+                  src={images[currentImage]} 
+                  alt={`Imagen ${currentImage + 1}`} 
+                  className="w-full h-auto max-h-[90vh] object-contain" 
+                />
+                <button 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-200 rounded-full p-2 text-gray-600 hover:text-gray-800 transition-colors"
+                  onClick={() => setCurrentImage((currentImage + 1) % images.length)}
+                >
+                  <i className="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
