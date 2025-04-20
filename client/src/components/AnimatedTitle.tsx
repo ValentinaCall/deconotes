@@ -1,10 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-interface AnimatedTitleProps {
-  text: string;
-}
-
-const AnimatedTitle = ({ text }: AnimatedTitleProps) => {
+const AnimatedTitle = () => {
   const containerRef = useRef<HTMLHeadingElement>(null);
   const fragments = [
     { text: 'plasma', moveRange: 20 },

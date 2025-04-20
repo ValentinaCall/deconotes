@@ -154,11 +154,11 @@ a.nav-item:hover {
 }
 
 .item-image:hover .price-container {
-  animation: scale 1s ease-in-out forwards;
+  animation: scale .5s ease-in-out forwards;
 }
 
 .item-image .price-container {
-  animation: scale-back 1s ease-in-out forwards;
+  animation: scale-back .4s ease-in-out forwards;
 }
 
 @keyframes scale-back {

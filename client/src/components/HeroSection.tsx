@@ -1,5 +1,5 @@
-import AnimatedTitle from './AnimatedTitle';
-import { assetPath } from '../utils/assetPath';
+import AnimatedTitle from "./AnimatedTitle";
+import { assetPath } from "../utils/assetPath";
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -17,11 +17,11 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             muted
             playsInline
           >
-            <source src={assetPath('/videos/hero.webm')} type="video/webm" />
+            <source src={assetPath("/videos/hero.webm")} type="video/webm" />
           </video>
           <div className="absolute inset-0 bg-black opacity-30"></div>
-          <div className="relative z-10 w-full px-4 md:px-8">
-            <AnimatedTitle text="Plasma tus ideas naturalmente" />
+          <div className="relative z-10 w-full px-4 md:px-8 xl:max-w-[1174px] mx-auto">
+            <AnimatedTitle />
           </div>
         </div>
       </section>

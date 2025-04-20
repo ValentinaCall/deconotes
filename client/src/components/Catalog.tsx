@@ -20,7 +20,7 @@ const Catalog = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-8 xl:max-w-[1174px]">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Nuestro Catálogo</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">Descubre nuestras soluciones innovadoras diseñadas para mejorar la productividad y la organización.</p>
@@ -57,10 +57,11 @@ const Catalog = () => {
             onClick={(e) => handleOutsideClick(e)}
           >
             <div className="bg-transparent rounded-lg w-full max-w-4xl p-4 relative">
-              <button 
+                <button 
                 onClick={() => setIsGalleryOpen(false)}
                 className="absolute top-2 right-2 w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 transition-colors"
-              >
+                style={{ zIndex: 100 }}
+                >
                 <i className="fas fa-times"></i>
               </button>
               <div className="slider-container relative max-h-[90vh] overflow-hidden">

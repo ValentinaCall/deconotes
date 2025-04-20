@@ -1,7 +1,7 @@
 const OrganizationalStructure = () => {
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 md:px-8 xl:max-w-[1174px]">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">
             Estructura Organizacional
@@ -14,62 +14,58 @@ const OrganizationalStructure = () => {
         </div>
 
         {/* Org Chart */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-12 overflow-x-auto">
-          <h3 className="text-xl font-bold mb-6 text-center">
+        <h3 className="text-xl font-bold mb-6 text-center">
             Organigrama de la Empresa
-          </h3>
-
-          <div className="org-chart min-w-[800px]">
-            {/* CEO */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-[#3498db] text-white rounded-lg p-4 w-64 text-center">
-                <h4 className="font-bold">Gerente General</h4>
-                <p className="text-sm">Valentina Calleja</p>
-              </div>
-            </div>
-
-            {/* Second Level */}
-            <div className="flex justify-start gap-4 mb-8">
-              <div className="flex flex-col items-center">
-                <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                  <h4 className="font-bold">Gerente de Calidad</h4>
-                  <p className="text-sm">Morelia</p>
+        </h3>
+        <div className="w-full overflow-x-auto">
+          <div className="bg-white rounded-lg shadow-md p-6 mb-12 min-w-max">
+            <div className="org-chart min-w-[800px]">
+              {/* CEO */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-[#3498db] text-white rounded-lg p-4 w-64 text-center">
+                  <h4 className="font-bold">Gerente General</h4>
+                  <p className="text-sm">Valentina Calleja</p>
                 </div>
-                <div className="h-8 w-px bg-gray-300"></div>
               </div>
 
-              <div className="flex flex-col items-center">
-                <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                  <h4 className="font-bold">Producción</h4>
-                  <p className="text-sm">Pablo</p>
+              {/* Second Level */}
+              <div className="flex justify-center gap-4 mb-8">
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
+                    <h4 className="font-bold">Gerente de Calidad</h4>
+                    <p className="text-sm">Morelia</p>
+                  </div>
                 </div>
-                <div className="h-8 w-px bg-gray-300"></div>
-              </div>
 
-              <div className="flex flex-col items-center">
-                <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                  <h4 className="font-bold">Finanzas</h4>
-                  <p className="text-sm">Patricio</p>
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
+                    <h4 className="font-bold">Producción</h4>
+                    <p className="text-sm">Pablo</p>
+                  </div>
                 </div>
-                <div className="h-8 w-px bg-gray-300"></div>
-              </div>
 
-              {/* Updated Personal */}
-              <div className="flex flex-col items-center">
-                <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                  <h4 className="font-bold">Personal</h4>
-                  <p className="text-sm">Morena</p>
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
+                    <h4 className="font-bold">Finanzas</h4>
+                    <p className="text-sm">Patricio</p>
+                  </div>
                 </div>
-                <div className="h-8 w-px bg-gray-300"></div>
-              </div>
 
-              {/* Updated Mercadotecnia */}
-              <div className="flex flex-col items-center">
-                <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                  <h4 className="font-bold">Mercadotecnia</h4>
-                  <p className="text-sm">Nicolás</p>
+                {/* Updated Personal */}
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
+                    <h4 className="font-bold">Personal</h4>
+                    <p className="text-sm">Morena</p>
+                  </div>
                 </div>
-                <div className="h-8 w-px bg-gray-300"></div>
+
+                {/* Updated Mercadotecnia */}
+                <div className="flex flex-col items-center">
+                  <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
+                    <h4 className="font-bold">Mercadotecnia</h4>
+                    <p className="text-sm">Nicolás</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
