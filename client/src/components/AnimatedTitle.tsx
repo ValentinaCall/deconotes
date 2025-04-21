@@ -1,7 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const AnimatedTitle = () => {
   const containerRef = useRef<HTMLHeadingElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
   const fragments = [
     { text: 'plasma', moveRange: 20 },
     { text: 'tus ideas', moveRange: 35 },
@@ -9,8 +10,11 @@ const AnimatedTitle = () => {
   ];
 
   useEffect(() => {
+    const homeSection = document.getElementById('home');
+    if (!homeSection) return;
+
     const handleMouseMove = (e: MouseEvent) => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !isHovering) return;
 
       const { clientX, clientY } = e;
       const spans = containerRef.current.getElementsByTagName('span');
@@ -39,9 +43,33 @@ const AnimatedTitle = () => {
       });
     };
 
+    const resetPositions = () => {
+      if (!containerRef.current) return;
+      const spans = containerRef.current.getElementsByTagName('span');
+      Array.from(spans).forEach((span) => {
+        span.style.transform = 'translate(0px, 0px)';
+      });
+    };
+
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+      resetPositions();
+    };
+
+    homeSection.addEventListener('mouseenter', handleMouseEnter);
+    homeSection.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+
+    return () => {
+      homeSection.removeEventListener('mouseenter', handleMouseEnter);
+      homeSection.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isHovering]);
 
   return (
     <h1 
@@ -73,4 +101,4 @@ const AnimatedTitle = () => {
   );
 };
 
-export default AnimatedTitle; 
+export default AnimatedTitle;

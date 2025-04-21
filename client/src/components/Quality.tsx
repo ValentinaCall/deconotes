@@ -48,7 +48,7 @@ const Quality = () => {
           <p className="text-gray-600 max-w-3xl mx-auto">Estamos comprometidos a ofrecer productos y servicios de la más alta calidad. Tus comentarios nos ayudan a mejorar continuamente.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12">
           {/* Formulario de Encuesta */}
           <div>
             <h3 className="text-2xl font-bold mb-6">Comentarios de Clientes</h3>
@@ -142,34 +142,6 @@ const Quality = () => {
                 Enviar Comentarios
               </button>
             </form>
-          </div>
-          
-          {/* Resultados de la Encuesta */}
-          <div>
-            <h3 className="text-2xl font-bold mb-6">Satisfacción del Cliente</h3>
-            
-            <div className="bg-gray-50 rounded-lg shadow-md p-6">
-              <div className="mb-8">
-                <h4 className="font-bold mb-4">Satisfacción General</h4>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <SatisfactionChart />
-                </div>
-              </div>
-              
-              <div className="mb-8">
-                <h4 className="font-bold mb-4">Puntaje Neto del Promotor</h4>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <NpsChart />
-                </div>
-              </div>
-              
-              <div>
-                <h4 className="font-bold mb-4">Calificaciones del Producto</h4>
-                <div className="bg-white p-4 rounded-lg shadow-sm">
-                  <ProductRatingsChart />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
