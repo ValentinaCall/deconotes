@@ -180,11 +180,16 @@ const MarketingStrategies = () => {
               >
                 <i className="fas fa-times"></i>
               </button>
-              <img 
-                src={mediaConfig.image1.src}
-                alt={mediaConfig.image1.title}
-                className="max-h-[85vh] w-auto object-contain"
-              />
+              <div className="flex flex-col items-center">
+                <img 
+                  src={mediaConfig.image1.src}
+                  alt={mediaConfig.image1.title}
+                  className="max-h-[85vh] w-auto object-contain"
+                />
+                <div className="mt-4 px-5 py-3 bg-white bg-opacity-90 text-black rounded-md text-center">
+                  <p className="font-medium">Costo aproximado: $2,654 por anuncio en la sección de Clasificados en el periódico El Universal</p>
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -202,11 +207,16 @@ const MarketingStrategies = () => {
               >
                 <i className="fas fa-times"></i>
               </button>
-              <img 
-                src={mediaConfig.image2.src}
-                alt={mediaConfig.image2.title}
-                className="max-h-[85vh] w-auto object-contain"
-              />
+              <div className="flex flex-col items-center">
+                <img 
+                  src={mediaConfig.image2.src}
+                  alt={mediaConfig.image2.title}
+                  className="max-h-[85vh] w-auto object-contain"
+                />
+                <div className="mt-4 px-5 py-3 bg-white bg-opacity-90 text-black rounded-md text-center">
+                  <p className="font-medium">Costo aproximado: $20,000 mensuales para espectacular en Avenida Huayacan</p>
+                </div>
+              </div>
             </div>
           </div>
         )}
