@@ -90,7 +90,7 @@ export const timelineItems: TimelineItem[] = [
     id: 3,
     year: "2017",
     title: "Expansión Internacional",
-    description: "Hoy, gracias a tu apoyo, seguimos creando productos que no solo son prácticos y creativos, sino también amigables con la Tierra.",
+    description: "Hoy, gracias a tu apoyo, seguimos creando productos que no solo son prácticos y creativos, sino también amigables con la Tierra. Hoy somos DecoNotes.",
     icon: "fa-globe",
     image: "images/history-img-3.jpg"
   }

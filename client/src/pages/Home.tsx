@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import CompanyHistory from '@/components/CompanyHistory';
+import ClientProfile from '@/components/ClientProfile';
 import AboutUs from '@/components/AboutUs';
 import Catalog from '@/components/Catalog';
 import OrganizationalStructure from '@/components/OrganizationalStructure';
@@ -15,6 +16,7 @@ import Footer from '@/components/Footer';
 const Home = () => {
   const homeRef = useRef<HTMLElement>(null);
   const historyRef = useRef<HTMLElement>(null);
+  const clientProfileRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
   const catalogRef = useRef<HTMLElement>(null);
   const structureRef = useRef<HTMLElement>(null);
@@ -26,10 +28,11 @@ const Home = () => {
 
   const sections = [
     { id: 'home', name: 'Historia', ref: homeRef },
+    { id: 'structure', name: 'Estructura', ref: structureRef },
     { id: 'history', name: 'History', ref: historyRef },
+    { id: 'client-profile', name: 'Perfil del cliente', ref: clientProfileRef },
     { id: 'about', name: 'Quienes somos', ref: aboutRef },
     { id: 'catalog', name: 'Catálogo', ref: catalogRef },
-    { id: 'structure', name: 'Estructura', ref: structureRef },
     { id: 'quality', name: 'Calidad', ref: qualityRef },
     { id: 'campaign', name: 'Campaña', ref: campaignRef },
     { id: 'investors', name: 'Inversionistas', ref: investorsRef },
@@ -53,8 +56,16 @@ const Home = () => {
           <HeroSection scrollToSection={scrollToSection} />
         </section>
         
+        <section ref={structureRef} id="structure">
+          <OrganizationalStructure />
+        </section>
+        
         <section ref={historyRef} id="history">
           <CompanyHistory />
+        </section>
+        
+        <section ref={clientProfileRef} id="client-profile">
+          <ClientProfile />
         </section>
         
         <section ref={aboutRef} id="about">
@@ -63,10 +74,6 @@ const Home = () => {
         
         <section ref={catalogRef} id="catalog">
           <Catalog />
-        </section>
-        
-        <section ref={structureRef} id="structure">
-          <OrganizationalStructure />
         </section>
         
         <section ref={qualityRef} id="quality">

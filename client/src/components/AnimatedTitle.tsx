@@ -4,9 +4,9 @@ const AnimatedTitle = () => {
   const containerRef = useRef<HTMLHeadingElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const fragments = [
-    { text: 'plasma', moveRange: 20 },
-    { text: 'tus ideas', moveRange: 35 },
-    { text: 'naturalmente', moveRange: 50 }
+    { text: 'Diseña,', moveRange: 20 },
+    { text: 'crea y transforma ', moveRange: 35 },
+    { text: 'cada hoja', moveRange: 50 }
   ];
 
   useEffect(() => {

@@ -38,7 +38,7 @@ const Footer = ({ sections, scrollToSection }: FooterProps) => {
         <div className="pt-2">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Deconotes, Inc. Todos los
+              &copy; {new Date().getFullYear()} BioArt, Inc. Todos los
               derechos reservados.
             </p>
           </div>

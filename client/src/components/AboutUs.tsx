@@ -14,7 +14,7 @@ const AboutUs = () => {
               <i className="fas fa-bullseye text-white text-2xl"></i>
             </div>
             <h3 className="text-xl font-bold mb-4">Nuestra Misión</h3>
-            <p className="text-gray-600">Crear libretas ecológica que permitan escribir, decorar y personalizar con estilo.</p>
+            <p className="text-gray-600">Ser una opción creativa y sustentable al crear libretas ecológicas que permitan escribir, decorar y personalizar con estilo.</p>
           </div>
 
           {/* Vision */}
@@ -23,7 +23,7 @@ const AboutUs = () => {
               <i className="fas fa-eye text-white text-2xl"></i>
             </div>
             <h3 className="text-xl font-bold mb-4">Nuestra Visión</h3>
-            <p className="text-gray-600">Ser una opción creativa y sustentable para quienes buscan papelería única y amigable con el planeta.</p>
+            <p className="text-gray-600">Ser la empresa líder en ayudar a reducir y reutilizar el papel de una manera ecológica.</p>
           </div>
 
           {/* Philosophy */}

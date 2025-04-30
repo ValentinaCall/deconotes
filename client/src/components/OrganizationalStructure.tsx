@@ -7,9 +7,7 @@ const OrganizationalStructure = () => {
             Estructura Organizacional
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Nuestra estructura de equipo está diseñada para fomentar la
-            innovación, la colaboración y una respuesta rápida a las necesidades
-            del mercado.
+            Nuestra estructura de equipo está diseñada para fomentar la innovación, la colaboración y una respuesta rápida a las necesidades del mercado.
           </p>
         </div>
 
@@ -23,7 +21,7 @@ const OrganizationalStructure = () => {
               {/* CEO */}
               <div className="flex justify-center mb-8">
                 <div className="bg-[#3498db] text-white rounded-lg p-4 w-64 text-center">
-                  <h4 className="font-bold">Gerente General</h4>
+                  <h4 className="font-bold">Directora General</h4>
                   <p className="text-sm">Valentina Calleja</p>
                 </div>
               </div>
@@ -39,14 +37,14 @@ const OrganizationalStructure = () => {
 
                 <div className="flex flex-col items-center">
                   <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                    <h4 className="font-bold">Producción</h4>
+                    <h4 className="font-bold">Gerente de Producción</h4>
                     <p className="text-sm">Pablo</p>
                   </div>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                    <h4 className="font-bold">Finanzas</h4>
+                    <h4 className="font-bold">Gerente Finanzas</h4>
                     <p className="text-sm">Patricio</p>
                   </div>
                 </div>
@@ -54,7 +52,7 @@ const OrganizationalStructure = () => {
                 {/* Updated Personal */}
                 <div className="flex flex-col items-center">
                   <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                    <h4 className="font-bold">Personal</h4>
+                    <h4 className="font-bold">Gerente de Ventas</h4>
                     <p className="text-sm">Morena</p>
                   </div>
                 </div>
@@ -62,7 +60,7 @@ const OrganizationalStructure = () => {
                 {/* Updated Mercadotecnia */}
                 <div className="flex flex-col items-center">
                   <div className="bg-[#2ecc71] text-white rounded-lg p-3 w-48 text-center">
-                    <h4 className="font-bold">Mercadotecnia</h4>
+                    <h4 className="font-bold">Gerente de Marketing</h4>
                     <p className="text-sm">Nicolás</p>
                   </div>
                 </div>

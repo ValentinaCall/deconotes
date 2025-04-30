@@ -5,8 +5,8 @@ const CompanyHistory = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4">Nuestra Historia</h2>
-          <p>En Deconotes creemos que cada página escrita puede contar más que palabras: puede contar historias de cambio. Nacimos con una idea sencilla pero poderosa —crear una libreta que inspire creatividad sin dejar huella negativa en el mundo.</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-poppins mb-4 text-center">Nuestra Historia</h2>
+          <p>En BioArt creemos que cada página escrita puede contar más que palabras: puede contar historias de cambio. Nacimos con una idea sencilla pero poderosa —crear una libreta que inspire creatividad sin dejar huella negativa en el mundo.</p>
           <br />
           <p>Utilizando materiales reciclados y procesos responsables, diseñamos un producto que no solo acompaña tus ideas, sino que también respeta el entorno del que formamos parte.</p>
           <br />
