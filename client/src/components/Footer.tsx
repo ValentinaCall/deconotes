@@ -41,14 +41,6 @@ const Footer = ({ sections, scrollToSection }: FooterProps) => {
               &copy; {new Date().getFullYear()} Deconotes, Inc. Todos los
               derechos reservados.
             </p>
-            <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-              <a href="#" className="hover:text-white">
-                Política de Privacidad
-              </a>
-              <a href="#" className="hover:text-white">
-                Términos de Servicio
-              </a>
-            </div>
           </div>
         </div>
       </div>

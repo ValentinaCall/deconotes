@@ -29,7 +29,7 @@ const Catalog = () => {
         <div className='deconote-counter-shop'>
           <div className="item-container">
             <div className="item">
-              <div className="item-image">
+              <div className="item-image" onClick={() => setIsGalleryOpen(true)}>
                 <div className="price-container">
                   <span className="price-symbol">$</span>
                   <span className="price-number">69</span>
